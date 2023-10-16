@@ -6,6 +6,3 @@
 미리보기 :
 
 ## 사용 스택
-
-## favicon을 SVG로 넣을 때
-<link rel="icon" type="image/svg+xml" href="favicon.svg" />
