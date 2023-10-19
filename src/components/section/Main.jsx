@@ -1,9 +1,13 @@
 import React from 'react'
+import Search from './Search'
 
-const main = () => {
-  return (
-    <main id='main' roll='main'>main</main>
-  )
+const main = (props) => {
+    return (
+        <main id='main' roll='main'>
+            <Search />
+            {props.children}
+        </main>
+    )
 }
 
 export default main

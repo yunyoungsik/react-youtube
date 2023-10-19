@@ -7,22 +7,24 @@ import Not from './pages/Not'
 import Header from './components/section/Header'
 import Main from './components/section/Main'
 import Footer from './components/section/Footer'
+import Search from './pages/Search'
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <Header />
-      <Main>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/today' element={<Today />} />
-          <Route path='/youtuber' element={<Youtuber />} />
-          <Route path='*' element={<Not />}></Route>
-        </Routes>
-      </Main>
-      <Footer />
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Header />
+            <Main>
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/today' element={<Today />} />
+                    <Route path='/youtuber' element={<Youtuber />} />
+                    <Route path='/search/:searchId' element={<Search />} />
+                    <Route path='*' element={<Not />}></Route>
+                </Routes>
+            </Main>
+            <Footer />
+        </BrowserRouter>
+    );
 }
 
 export default App

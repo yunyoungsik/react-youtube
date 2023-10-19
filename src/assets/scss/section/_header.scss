@@ -7,21 +7,24 @@
         em {
             width: 50px;
             height: 50px;
-            border: 1px solid var(--red);
+            border: 2px solid var(--red);
             position: relative;
             animation: logo 5s 10s ease-in-out infinite;
 
             @keyframes logo {
                 0% {transform: scale(0); opacity: 0;}
                 10% {transform: scale(100%); opacity: 1;}
+                12% {transform: scale(95%); opacity: 1;}
+                14% {transform: scale(100%); opacity: 1;}
+                90% {transform: scale(100%); opacity: 1;}
                 100% {transform: scale(0); opacity: 0;}
             }
 
             svg {
                 fill: var(--red);
                 position: absolute;
-                left: 5px;
-                top: 10px;
+                left: 6px;
+                top: 8px;
                 width: 30px;
                 height: 30px;
             }
@@ -39,14 +42,16 @@
 }
 
 .header__menu {
+    padding: 10px;
     .menu {
-        li{
+        border-bottom: 1px solid rgba(255,255,255,.15);
+        li {
             // margin-bottom: 5px;
-            a{
+            a {
                 font-size: 1rem;
                 display: block;
                 line-height: 1;
-                counter-reset: var(--white);
+                color: var(--white);
                 padding: 1rem 2rem 1rem 2.5rem;
                 // border-radius: 40px;
                 position: relative;
@@ -70,6 +75,48 @@
                 a {
                     background-color: var(--red);
                 }
+            }
+        }
+    }
+}
+.keyword {
+    padding: 10px;
+    li {
+        font-size: 1rem;
+        display: inline-block;
+        padding: 0.2rem 1em;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        border: 1px solid transparent;
+        border-radius: 1rem;
+        background-color: #333333;
+
+        &:hover {
+            background-color: var(--red);
+            border: 1px solid rgba(0,0,0,.15);
+        }
+        a {
+            
+        }
+    }
+}
+
+.header__sns {
+    border-top: 1px solid rgba(255,255,255,.15);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 20px 0 10px;
+    background-color: var(--black);
+    ul {
+        li {
+            display: inline-block;
+            padding: 5px 7px;
+            svg {
+                width: 20px;
+                height: 20px;
             }
         }
     }

@@ -6,7 +6,7 @@
     height: 100%;
     z-index: 1000;
     background-color: var(--black);
-    border-right: 1px solid var(--black500);
+    border-right: 1px solid var(--black200);
 }
 
 #main {
@@ -19,6 +19,16 @@
 
 #footer {
     text-align: center;
-    padding: 20px 20px 20px 260px;
-    background-color: #333;
+    padding: 16px 10px 17px 250px;
+    border-top: 1px solid rgba(255,255,255,.15);
+    a {
+        font-size: 0.6rem;
+        color: var(--black500);
+        padding: 10px;
+        display: inline-block;
+        &:hover {
+            @include underline;
+            text-decoration-color: rgba(255,255,255,.3);
+        }
+    }
 }

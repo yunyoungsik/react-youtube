@@ -1,0 +1,44 @@
+.video__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 24%);
+    justify-content: space-between;
+
+    .video {
+        margin-bottom: 50px;
+        border: 1px solid rgba(255,255,255,.05);
+        .video__thumb {
+            a {
+                display: block;
+                cursor: pointer;
+                width: 100%;
+                padding-bottom: 56.25%; // 16:9 비율
+                background-size: cover;
+                background-position: center;
+            }
+        }
+        .video__info {
+            h3 {
+                padding: 0 10px;
+                margin-bottom: 10px;
+                font-size: 1rem;
+                font-weight: 700;
+                @include line-two;
+            }
+            .desc {
+                padding: 0 10px;
+                margin-bottom: 5px;
+                font-size: 0.8rem;
+                color: var(--white500);
+                @include line-two;
+            }
+            .info {
+               padding: 0 10px;
+               margin-bottom: 5px;
+               font-size: 0.8rem;
+               span {
+                margin-right: 10px;
+               }
+            }
+        }
+    }
+}
