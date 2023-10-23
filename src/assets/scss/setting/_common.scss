@@ -10,4 +10,48 @@ section {
     @media(max-width: 800px) {
         padding: 20px;
     }
+    h2 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+}
+
+// 비디오 마우스 아이콘 효과
+.play__icon {
+    a {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        width: 100%;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0);
+            left: 0;
+            top: 0;
+            transition: background-color, 0.3s;
+        }
+        &:hover::before {
+            background-color: rgba(0,0,0,.3);
+        }
+        &::after {
+            content: '';
+            width: 80px;
+            height: 80px;
+            background: rgba(0,0,0,.8) url(../../img/icon/play.svg) no-repeat center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        &:hover::after {
+            opacity: 1;
+        }
+    }
 }
