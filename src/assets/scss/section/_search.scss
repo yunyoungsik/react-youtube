@@ -21,7 +21,8 @@
            height: inherit;
            background-color: rgba(0,0,0,0);
            border-right: 1px solid rgba(255,255,255,.15);
-           color: var(--white500);
+           color: var(--white);
+           font-weight: 700;
         }
         input:focus {
             outline: 0;
