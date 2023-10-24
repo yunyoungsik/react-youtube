@@ -43,7 +43,6 @@
                 margin-right: 10px;
                }
             }
-            .comment {}
         }
     }
 }
@@ -106,6 +105,16 @@
                 padding: 20px;
                 border: 1px solid rgba(255,255,255,.05);
                 white-space: pre-line;
+                margin-bottom: 20px;
+            }
+            .comment {
+                ul {
+                    li {
+                        margin-bottom: 10px;
+                        h3 {}
+                        p {}
+                    }
+                }
             }
         }
     }
