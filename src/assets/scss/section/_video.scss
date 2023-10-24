@@ -37,6 +37,8 @@
                font-size: 0.8rem;
                color: var(--white500);
                font-weight: 700;
+               display: flex;
+               justify-content: space-between;
                span {
                 margin-right: 10px;
                }
@@ -44,11 +46,11 @@
         }
     }
 }
+
+// 비디오 상세페이지
 #videoView {
-    padding: 0;
+    // padding: 0;
     .video__view {
-        width: 100%;
-        padding: 0;
         .video__play {
             position: relative;
             padding-bottom: 56.25%;
@@ -56,6 +58,11 @@
                 position: absolute;
                 top: 0;
                 left: 0;
+            }
+        }
+        .video__info {
+            .video__title {
+                margin-top: 10px;
             }
         }
     }
