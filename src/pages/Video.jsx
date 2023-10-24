@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { fetchFromAPI } from '../utils/api'
 import ReactPlayer from 'react-player'
+import { AiOutlineLike } from 'react-icons/ai';
+import { BsPlay } from 'react-icons/bs';
+import { BiCommentDetail } from 'react-icons/bi';
+
+// 단위 구분
+const formatCount = (count) => {
+    return count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 const Video = () => {
     const { videoId } = useParams()
@@ -31,13 +39,21 @@ const Video = () => {
                     <div className='video__info'>
                         <h2 className='video__title'>{videoDetail.snippet.title}</h2>
                         <div className='video__channel'>
-                            <div className='id'>{videoDetail.snippet.channelId}</div>
+                            <div className='id'>
+                                <Link to={`/channel/${videoDetail.snippet.channelId}`}>
+                                    {videoDetail.snippet.channelTitle}
+                                </Link>
+                            </div>
                             <div className='count'>
-                                <span className='view'>{videoDetail.statistics.viewCount}</span>
-                                <span className='like'>{videoDetail.statistics.likeCount}</span>
-                                <span className='comment'>{videoDetail.statistics.commentCount}</span>
+                                <div className='view'><BsPlay /><span>{formatCount(videoDetail.statistics.viewCount)}</span></div>
+                                <div className='like'><AiOutlineLike /><span className='like'>{formatCount(videoDetail.statistics.likeCount)}</span></div>
+                                <div className='comment'><BiCommentDetail /><span className='comment'>{formatCount(videoDetail.statistics.commentCount)}</span></div>
                             </div>
                         </div>
+                        <div className="desc">
+                            <span>{videoDetail.snippet.description}</span>
+                        </div>
+                        <div className='comment'></div>
                     </div>
                 </div>
             )}
