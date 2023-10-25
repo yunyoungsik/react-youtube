@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { fetchFromAPI } from '../utils/api';
 import { AiOutlineBell } from 'react-icons/ai';
 import { BsPlay } from 'react-icons/bs';
@@ -9,15 +9,6 @@ import VideoSearch from '../components/video/VideoSearch';
 // 단위 구분
 const formatCount = (count) => {
     return count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-// 날짜 변경
-const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
 }
 
 const Channel = () => {
