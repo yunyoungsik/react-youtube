@@ -39,6 +39,9 @@
             @include line-two;
             margin-bottom: 10px;
             color: var(--black500);
+            &:hover {
+                @include line-(1000);
+            }
         }
         .info {
             display: flex;

@@ -4,6 +4,7 @@ import { fetchFromAPI } from '../utils/api';
 import { AiOutlineBell } from 'react-icons/ai';
 import { BsPlay } from 'react-icons/bs';
 import { BiVideo } from 'react-icons/bi';
+import VideoSearch from '../components/video/VideoSearch';
 
 // 단위 구분
 const formatCount = (count) => {
@@ -22,6 +23,7 @@ const formatDate = (dateString) => {
 const Channel = () => {
     const { channelId } = useParams();
     const [ channelDetail, setchannelDetail ] = useState();
+    const [ channelVideo, setchannelVideo ] = useState([]);
 
     useEffect(() => {
         const fetchResults = async() => {
@@ -29,25 +31,16 @@ const Channel = () => {
                 const data = await fetchFromAPI(`channels?part=snippet&id=${channelId}`)
                 // console.log(data.items[0])
                 setchannelDetail(data.items[0])
+
+                const videosData = await fetchFromAPI(`search?channelId=${channelId}&part=snippet&order=date`)
+                console.log(videosData)
+                setchannelVideo(videosData.items)
+
             } catch(error) {
                 console.log("Error fetching data", error)
             }
         }
         fetchResults();
-    }, [channelId])
-
-    const [latestVideos, setLatestVideos] = useState([]);
-
-    useEffect(() => {
-        const fetchLatestVideos = async () => {
-            try {
-                const data = await fetchFromAPI(`search?type=video&part=snippet&channelId=${channelId}&order=date&maxResults=5`)
-                setLatestVideos(data.items);
-            } catch(error) {
-                console.log("Error fetching data", error)
-            }
-        }
-        fetchLatestVideos();
     }, [channelId])
 
     return (
@@ -69,29 +62,7 @@ const Channel = () => {
                         </div>
                     </div>
                     <div className='channel__video video__inner'>
-                        {latestVideos.map((video, key) => (
-                            <div className='video'>
-                                <div className="video__thumb play__icon">
-                                    <Link to={`/video/${video.id.videoId}`} style={{ backgroundImage: `url(${video.snippet.thumbnails.high.url})` }}>
-                                        
-                                    </Link>
-                                </div>
-                                <div className="video__info">
-                                    <h3 className="title">
-                                        <Link to={`/channel/${video.id.videoId}`}>
-                                            {video.snippet.title}
-                                        </Link>
-                                    </h3>
-                                    <p className="desc">
-                                        {video.snippet.description}
-                                    </p>
-                                    <div className='info'>
-                                        <Link to={`/channel/${video.snippet.channelId}`} className='author'>{video.snippet.channelTitle}</Link>
-                                        <span className='date'>{formatDate(video.snippet.publishedAt)}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+                        <VideoSearch video={channelVideo} />
                     </div>
                     <div className='channel__more'></div>
                 </div>

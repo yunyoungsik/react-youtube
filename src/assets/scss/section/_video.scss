@@ -74,7 +74,7 @@
                 .id {
                     font-weight: 800;
                     a {
-                        border: 1px solid rgba(255,255,255,.05);
+                        background-color: rgba(255,255,255,.03);
                         padding: 10px 20px;
                         border-radius: 30px;
                     }
@@ -82,7 +82,7 @@
                 .count {
                     display: flex;
                     div {
-                        border: 1px solid rgba(255,255,255,.05);
+                        background-color: rgba(255,255,255,.03);
                         padding: 10px 20px;
                         border-radius: 30px;
                         display: flex;
@@ -103,16 +103,23 @@
             }
             .desc {
                 padding: 20px;
-                border: 1px solid rgba(255,255,255,.05);
+                background-color: rgba(255,255,255,.03);
                 white-space: pre-line;
                 margin-bottom: 20px;
             }
             .comment {
                 ul {
                     li {
+                        background-color: rgba(255,255,255,.03);
+                        padding: 10px 20px;
                         margin-bottom: 10px;
-                        h3 {}
-                        p {}
+                        h3 {
+                            font-size: 0.8rem;
+                            font-weight: 800;
+                        }
+                        span {
+                            font-size: 0.8rem;
+                        }
                     }
                 }
             }
