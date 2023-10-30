@@ -12,7 +12,3 @@
 sass를 설치 : `npm install sass`
 react-router-dom 설치 : `npm install react-dom`
 react-icons 설치 : `npm install react-icons`
-=======
-sass를 설치 : `npm install sass`
-react-router-dom 설치 : `npm install react-dom`
-react-icons 설치 : `npm install react-icons`
