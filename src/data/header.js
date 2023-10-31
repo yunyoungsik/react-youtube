@@ -7,17 +7,17 @@ import { FiInstagram } from 'react-icons/fi'
 
 export const menuText = [
     {
-        title: "넷플릭스 몰아보기",
+        title: "몰아보기",
         icon: <BsFillPlayFill />,
         src: "/"
     },
     {
-        title: "넷플릭스 소개영상",
+        title: "몰아보기 소개영상",
         icon: <BsFillPlayFill />,
         src: "/Today"
     },
     {
-        title: "넷플릭스 유튜버",
+        title: "몰아보기 유튜버",
         icon: <BsFillPlayFill />,
         src: "/Youtuber"
     },

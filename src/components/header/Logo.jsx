@@ -10,7 +10,7 @@ const logo = () => {
         <em>
           <SiNetflix />
         </em>
-        <span>Netflix Youtube</span>
+        <span>Molabogi Youtube</span>
       </Link>
     </h1>
   )
